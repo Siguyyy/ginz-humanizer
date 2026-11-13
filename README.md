@@ -1,8 +1,12 @@
 <div align="center">
 
-# Lynote Humanize Text
+# Ginz Humanizer
 
-**Open-source AI humanizer: rewrite AI-generated drafts into natural, human-sounding prose — and see every step it takes.**
+**A free, private writing polisher that runs entirely in your browser.**
+
+[Open the live app](https://siguyyy.github.io/ginz-humanizer/) · [Source](https://github.com/Siguyyy/ginz-humanizer)
+
+The GitHub Pages app is a no-account, no-paywall browser experience for improving clarity, rhythm, and natural flow. It does not send text to a server or require an API key. The original Python pipeline remains available below for self-hosted/API-backed experiments.
 
 <a href="https://trendshift.io/repositories/35405?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-35405" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/35405/daily?language=Python" alt="lynote-ai%2Fhumanize-text | Trendshift" width="250" height="55"/></a>
 
@@ -18,6 +22,21 @@
 </p>
 
 </div>
+
+---
+
+## 🌐 Free browser app
+
+The static app lives in [`docs/`](docs/) and deploys automatically to [siguyyy.github.io/ginz-humanizer](https://siguyyy.github.io/ginz-humanizer/) through [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
+
+It includes:
+
+- Local browser-based rewriting with Balanced, Light touch, and Expressive styles.
+- General, Academic, Work, and Casual purpose presets.
+- Import `.txt`, copy/paste, and download the polished result.
+- No backend, account, analytics, external API calls, or usage quota.
+
+Because GitHub Pages serves static files only, the browser app uses a lightweight deterministic rewrite engine rather than the API-dependent Python/translation pipeline. Review every edit: no automated rewriting tool guarantees authorship, accuracy, or a particular detector result.
 
 ---
 

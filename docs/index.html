@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ginz Humanizer — private, local text polishing</title>
+  <meta name="description" content="A free, private browser-based writing polisher. Improve clarity, rhythm, and natural flow without sending text to a server.">
+  <link rel="canonical" href="https://siguyyy.github.io/ginz-humanizer/">
+  <meta property="og:title" content="Ginz Humanizer">
+  <meta property="og:description" content="Polish your writing locally in the browser. No account, API key, or paywall.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://siguyyy.github.io/ginz-humanizer/">
+  <meta name="theme-color" content="#08111f">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Ginz Humanizer home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>ginz<span class="brand-muted">/humanizer</span></span>
+      </a>
+      <nav class="top-actions" aria-label="Project links">
+        <a href="https://github.com/Siguyyy/ginz-humanizer" target="_blank" rel="noreferrer">Source</a>
+        <a class="privacy-pill" href="#privacy"><span class="dot"></span> Runs in your browser</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow"><span class="spark">✦</span> Open source writing polish</div>
+        <h1>Make your draft sound<br><em>more like you.</em></h1>
+        <p class="hero-copy">A small, fast writing companion for clearer sentences, better rhythm, and a more natural voice. No account. No API key. No paywall.</p>
+        <div class="trust-row" aria-label="Benefits">
+          <span>✓ Free to use</span><span>✓ Text stays on-device</span><span>✓ No sign-up</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Humanizer workspace">
+        <div class="workspace-head">
+          <div>
+            <span class="section-kicker">Your draft</span>
+            <h2>Paste text to begin</h2>
+          </div>
+          <button class="ghost-button" id="clear-btn" type="button">Clear</button>
+        </div>
+
+        <div class="editor-grid">
+          <div class="editor-panel input-panel">
+            <div class="panel-head">
+              <label for="input-text">Input</label>
+              <button class="tiny-button" id="sample-btn" type="button">Try a sample</button>
+            </div>
+            <textarea id="input-text" spellcheck="true" placeholder="Paste your draft here…" aria-describedby="input-help"></textarea>
+            <div class="panel-foot"><span id="input-help">Your text never leaves this page.</span><span id="input-count">0 words</span></div>
+          </div>
+
+          <div class="editor-panel output-panel">
+            <div class="panel-head">
+              <label for="output-text">Polished version</label>
+              <span class="ready-state" id="status"><span class="status-dot"></span>Ready</span>
+            </div>
+            <textarea id="output-text" readonly placeholder="Your polished version will appear here…" aria-live="polite"></textarea>
+            <div class="panel-foot"><span id="output-note">Local rewrite · no network calls</span><span id="output-count">0 words</span></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="control-group">
+            <span class="control-label">Rewrite style</span>
+            <div class="segmented" role="group" aria-label="Rewrite style">
+              <button type="button" class="segment active" data-style="balanced">Balanced</button>
+              <button type="button" class="segment" data-style="light">Light touch</button>
+              <button type="button" class="segment" data-style="expressive">Expressive</button>
+            </div>
+          </div>
+          <div class="control-group control-group-right">
+            <label class="control-label" for="purpose">Purpose</label>
+            <select id="purpose">
+              <option value="general">General</option>
+              <option value="academic">Academic</option>
+              <option value="work">Work / business</option>
+              <option value="casual">Casual</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <div class="helper"><span class="keyboard-key">⌘</span><span class="keyboard-key">↵</span> to polish</div>
+          <div class="action-buttons">
+            <label class="secondary-button" for="file-input">Import .txt</label>
+            <input id="file-input" type="file" accept=".txt,text/plain" hidden>
+            <button class="secondary-button" id="download-btn" type="button" disabled>Download</button>
+            <button class="primary-button" id="polish-btn" type="button"><span>Polish my draft</span><span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-it-works">
+        <div class="section-intro"><span class="section-kicker">Simple by design</span><h2>A better draft, without the black box.</h2></div>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-icon coral">✦</div><h3>Natural rhythm</h3><p>Varies sentence openings and length so your writing feels less repetitive and more conversational.</p></article>
+          <article class="feature-card"><div class="feature-icon blue">⌁</div><h3>Meaning first</h3><p>Light-touch edits keep your ideas, links, numbers, and structure intact while smoothing stiff phrasing.</p></article>
+          <article class="feature-card"><div class="feature-icon green">◉</div><h3>Private by default</h3><p>The rewrite engine is bundled in this page. Nothing is uploaded, stored, or sent to an external API.</p></article>
+        </div>
+      </section>
+
+      <section class="privacy-note" id="privacy">
+        <div class="privacy-icon">⌁</div>
+        <div><h2>Your writing stays yours.</h2><p>Ginz Humanizer is a static GitHub Pages app. It has no server, login, analytics, or hidden usage limit. For high-stakes or academic writing, review every change and follow your institution’s AI-use policy.</p></div>
+      </section>
+    </main>
+
+    <footer><span>Ginz Humanizer · open source</span><a href="https://github.com/Siguyyy/ginz-humanizer" target="_blank" rel="noreferrer">View on GitHub ↗</a></footer>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>
